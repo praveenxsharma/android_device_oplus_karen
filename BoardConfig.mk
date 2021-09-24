@@ -67,8 +67,7 @@ BOARD_BOOT_HEADER_VERSION := 2
 
 #Use Prebuilt Kernel for tree testing
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-#TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-BOARD_PREBUILT_DTBIMAGE := $(DEVICE_PATH)/prebuilt/dtb.img
+TARGET_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/dtb
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
