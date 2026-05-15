@@ -1,0 +1,41 @@
+# ART
+dalvik.vm.dex2oat-filter=speed-profile
+pm.dexopt.boot-after-ota=verify
+pm.dexopt.first-boot=verify
+pm.dexopt.install=speed-profile
+pm.dexopt.shared=speed
+
+# Crypto
+ro.crypto.volume.filenames_mode=aes-256-cts
+
+# Disable blur (MediaTek GPUs struggle with it)
+ro.sf.blurs_are_expensive=1
+persist.sys.sf.disable_blurs=1
+
+# Display
+ro.sf.lcd_density=480
+
+# Incremental FS
+ro.incremental.enable=yes
+
+# Media
+debug.stagefright.c2inputsurface=-1
+
+# NFC
+ro.nfc.port=I2C
+
+# Perf
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+
+# Treble
+ro.treble.enabled=true
+ro.actionable_compatible_property.enabled=true
+
+# USB
+ro.sys.usb.mtp.whql.enable=0
+ro.sys.usb.storage.type=mtp
+
+# Zygote
+ro.zygote=zygote64_32

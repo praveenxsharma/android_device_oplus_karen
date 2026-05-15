@@ -1,0 +1,15 @@
+# Device identity
+ro.product.brand=oplus
+ro.product.device=karen
+ro.product.manufacturer=oplus
+ro.product.model=CPH2401
+ro.product.name=lineage_karen
+
+# Market name — shows in Settings > About
+ro.product.marketname=OnePlus Nord 2T 5G
+
+# OPlus ROM version (keeps some OPlus apps happy)
+ro.build.version.oplusrom=V12.1
+
+# GMS
+ro.com.google.clientidbase=android-oplus
