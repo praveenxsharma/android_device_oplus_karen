@@ -32,9 +32,9 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-impl.recovery \
-    android.hardware.boot@1.0-service
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-service
 
 # Update engine
 PRODUCT_PACKAGES += \
@@ -77,8 +77,9 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@4.0-service-mediatek \
     android.hardware.graphics.composer@2.3-service \
-    android.hardware.memtrack-service.mediatek-mali
+    android.hardware.memtrack@1.0-service
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -117,9 +118,14 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.oplus
+    android.hardware.lights-service.mediatek
 
 # Media
+PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.2-mediatek \
+    android.hardware.media.c2@1.2-mediatek-64b \
+    android.hardware.media.omx@1.0-service
+
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(DEVICE_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
@@ -138,9 +144,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.mediatek-libperfmgr \
-    android.hardware.power.stats-service.example \
-    vendor.mediatek.hardware.mtkpower@1.2-service
+    vendor.mediatek.hardware.mtkpower@1.0-service
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -150,8 +154,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.0-service.multihal \
-    libsensorndkbridge
+    android.hardware.sensors@2.0-service.multihal-mediatek
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -159,7 +162,11 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service.dual_role_usb
+    android.hardware.usb@1.2-service-mediatekv2
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss-service.mediatek
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -172,11 +179,9 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.6-service \
-    android.hardware.wifi.hostapd@1.3-service \
+    android.hardware.wifi@1.0-service-lazy \
     hostapd \
-    wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf
@@ -247,4 +252,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 
 # Vendor
 $(call inherit-product, vendor/oplus/karen/karen-vendor.mk)
+
+# MTK Platform Daemons
+PRODUCT_PACKAGES += \
+    ccci_mdinit \
+    ccci_rpcd \
+    conninfra_loader \
+    dmc_core \
+    fuelgauged \
+    fuelgauged_nvram \
+    gbe \
+    lbs_hidl_service \
+    mcDriverDaemon \
+    mnld \
+    mtkfusionrild \
+    netdagent \
+    nvram_daemon \
+    thermal_manager \
+    vpud \
+    wlan_assistant
 
