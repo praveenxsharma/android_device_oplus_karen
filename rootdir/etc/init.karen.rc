@@ -1,0 +1,31 @@
+# Copyright (C) 2024 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+on early-init
+    # Disable EAS (Energy Aware Scheduling) until boot completes
+    write /proc/sys/kernel/sched_energy_aware 0
+
+on init
+    # Touchpanel
+    chmod 0664 /proc/touchpanel/double_tap_enable
+    chown system system /proc/touchpanel/double_tap_enable
+
+on post-fs-data
+    # Camera
+    mkdir /data/vendor/camera 0770 cameraserver cameraserver
+
+    # Fingerprint
+    mkdir /data/vendor/fingerprint 0770 system system
+
+    # NFC
+    mkdir /data/vendor/nfc 0770 nfc nfc
+
+on property:sys.boot_completed=1
+    # Re-enable EAS after boot
+    write /proc/sys/kernel/sched_energy_aware 1
+
+    # Display color mode
+    write /sys/class/drm/card0-DSI-1/disp_param 1
+
+    # Touchpanel tap-to-wake default state
+    write /proc/touchpanel/double_tap_enable 1

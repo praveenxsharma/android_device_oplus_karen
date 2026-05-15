@@ -1,0 +1,16 @@
+# Copyright (C) 2024 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+on init
+    # Map fstab into recovery ramdisk
+    mkdir /mnt/vendor/protect_f 0771 system system
+    mkdir /mnt/vendor/protect_s 0771 system system
+
+on fs
+    mount_all /first_stage_ramdisk/fstab.mt6893 --early
+
+    restorecon_recursive /mnt/vendor/protect_f
+    restorecon_recursive /mnt/vendor/protect_s
+
+on late-fs
+    mount_all /first_stage_ramdisk/fstab.mt6893 --late

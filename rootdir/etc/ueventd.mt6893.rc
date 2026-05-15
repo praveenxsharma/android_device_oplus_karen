@@ -1,0 +1,33 @@
+# Copyright (C) 2024 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+# MTK in-kernel modules
+/dev/wmtWifi                  0660   wifi       wifi
+/dev/wmtdetect                0660   system     system
+/dev/stpbt                    0660   bluetooth  bluetooth
+/dev/stpgps                   0660   gps        gps
+/dev/stpwmt                   0660   system     system
+/dev/gps_drv                  0660   gps        gps
+
+# Camera
+/dev/camera-fdvt              0660   cameraserver cameraserver
+/dev/camera-tsf               0660   cameraserver cameraserver
+/dev/camera-dip               0660   cameraserver cameraserver
+/dev/camera-isp               0660   cameraserver cameraserver
+
+# Thermal
+/dev/mtk_thermal              0660   system     system
+
+# Modem (CCCI)
+/dev/ccci*                    0660   radio      radio
+/dev/ttyC*                    0660   radio      radio
+
+# Display
+/dev/mtk_disp_mgr             0660   system     graphics
+/dev/mtkfb_vsync              0660   system     graphics
+
+# GPU
+/dev/mali*                    0660   system     graphics
+
+# Fingerprint
+/dev/goodix_fp                0660   system     system

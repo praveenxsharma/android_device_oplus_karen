@@ -1,0 +1,56 @@
+# Copyright (C) 2024 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+on early-init
+    # Mount debugfs
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+
+on init
+    # Storage
+    mkdir /mnt/vendor/protect_f 0771 system system
+    mkdir /mnt/vendor/protect_s 0771 system system
+    mkdir /mnt/vendor/nvdata 0771 system system
+    mkdir /mnt/vendor/nvcfg 0771 system system
+    mkdir /mnt/vendor/persist 0771 system system
+
+    # ZRAM
+    write /proc/sys/vm/page-cluster 0
+
+on fs
+    # Mount vendor persist partitions
+    mount_all /vendor/etc/fstab.mt6893 --early
+
+    # Restorecon
+    restorecon_recursive /mnt/vendor/protect_f
+    restorecon_recursive /mnt/vendor/protect_s
+    restorecon_recursive /mnt/vendor/nvdata
+    restorecon_recursive /mnt/vendor/nvcfg
+
+on late-fs
+    # Mount the rest
+    mount_all /vendor/etc/fstab.mt6893 --late
+
+on post-fs
+    # Set permissions for protect partitions
+    chown system system /mnt/vendor/protect_f
+    chown system system /mnt/vendor/protect_s
+    chmod 0770 /mnt/vendor/protect_f
+    chmod 0770 /mnt/vendor/protect_s
+
+on post-fs-data
+    # NVData
+    mkdir /data/vendor_de 0771 system system
+    mkdir /data/vendor_de/0 0771 system system
+
+    # CCCI (modem)
+    mkdir /data/vendor/ccci_cfg 0771 system system
+
+on property:sys.boot_completed=1
+    # ZRAM setup after boot
+    swapon_all /vendor/etc/fstab.mt6893
+
+    # Scheduler tuning
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 10
+    write /dev/stune/top-app/schedtune.prefer_idle 1
