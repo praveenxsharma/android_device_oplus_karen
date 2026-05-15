@@ -1,0 +1,2 @@
+# MTK connectivity chip (WMT) device type
+type stpwmt_device, dev_type;

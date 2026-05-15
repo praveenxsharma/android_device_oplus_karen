@@ -1,0 +1,2 @@
+# Allow platform apps to read OPlus properties
+get_prop(platform_app, exported_default_prop)

@@ -1,0 +1,5 @@
+# Allow init to set MTK/OPlus properties
+allow init vendor_default_prop:property_service set;
+
+# Allow init to read touchpanel procfs
+allow init proc_touchpanel:file rw_file_perms;

@@ -1,0 +1,17 @@
+# OPlus properties
+ro.oplus.                               u:object_r:exported_default_prop:s0
+persist.oplus.                          u:object_r:exported_default_prop:s0
+oplus.                                  u:object_r:exported_default_prop:s0
+
+# MTK properties
+ro.vendor.mediatek.                     u:object_r:exported_default_prop:s0
+vendor.mediatek.                        u:object_r:exported_default_prop:s0
+ro.mediatek.                            u:object_r:exported_default_prop:s0
+persist.vendor.mtk.                     u:object_r:exported_default_prop:s0
+
+# MTK power
+ro.vendor.mtk_                          u:object_r:exported_default_prop:s0
+persist.mtk.                            u:object_r:exported_default_prop:s0
+
+# Trustonic
+ro.vendor.mtk_trustonic_                u:object_r:exported_default_prop:s0

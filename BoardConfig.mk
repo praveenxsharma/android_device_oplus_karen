@@ -137,7 +137,11 @@ VENDOR_SECURITY_PATCH := 2023-03-05
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
+# Sepolicy — permissive for initial bringup
+# TODO: remove before release
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # VINTF / HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
@@ -160,3 +164,4 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # Inherit from vendor
 include vendor/oplus/karen/BoardConfigVendor.mk
+

@@ -1,0 +1,5 @@
+# MTK specific procfs entries
+genfscon proc /bootdevice             u:object_r:proc_cmdline:s0
+genfscon proc /mtk_lpm                u:object_r:proc_mtk_lpm:s0
+genfscon proc /touchpanel             u:object_r:proc_touchpanel:s0
+genfscon sysfs /bus/platform/devices/bootdevice  u:object_r:sysfs_block_device:s0

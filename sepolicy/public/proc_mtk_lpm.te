@@ -1,0 +1,2 @@
+# MTK Low Power Mode procfs
+type proc_mtk_lpm, fs_type, proc_type;

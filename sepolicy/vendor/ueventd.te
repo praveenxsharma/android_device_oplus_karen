@@ -1,0 +1,3 @@
+# Allow ueventd to set permissions on MTK device nodes
+allow ueventd stpwmt_device:chr_file { open read write getattr setattr };
+allow ueventd proc_touchpanel:file { open read write getattr };

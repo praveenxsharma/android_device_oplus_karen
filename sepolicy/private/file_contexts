@@ -1,0 +1,20 @@
+# Block devices
+/dev/block/platform/bootdevice(/.*)?    u:object_r:boot_block_device:s0
+
+# MTK specific nodes
+/dev/wmtWifi                            u:object_r:wifi_device:s0
+/dev/stpbt                              u:object_r:hci_attach_dev:s0
+/dev/stpgps                             u:object_r:gps_device:s0
+/dev/stpwmt                             u:object_r:stpwmt_device:s0
+/dev/mali[0-9]*                         u:object_r:gpu_device:s0
+/dev/mtk_disp_mgr                       u:object_r:graphics_device:s0
+/dev/mtkfb_vsync                        u:object_r:graphics_device:s0
+/dev/mtk_thermal                        u:object_r:thermal_device:s0
+/dev/ccci[0-9]*                         u:object_r:rild_device:s0
+/dev/ttyC[0-9]*                         u:object_r:rild_device:s0
+
+# Fingerprint
+/dev/goodix_fp                          u:object_r:fingerprint_device:s0
+
+# Vendor binaries
+/vendor/bin/hw/android\.hardware\.boot@1\.0-service  u:object_r:hal_bootctl_default_exec:s0
