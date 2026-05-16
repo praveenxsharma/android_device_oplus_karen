@@ -122,10 +122,29 @@ PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.2-mediatek-64b \
     android.hardware.media.omx@1.0-service
 
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(DEVICE_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(DEVICE_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+
+# MTK Platform Daemons
+PRODUCT_PACKAGES += \
+    ccci_mdinit \
+    ccci_rpcd \
+    conninfra_loader \
+    dmc_core \
+    fuelgauged \
+    fuelgauged_nvram \
+    gbe \
+    lbs_hidl_service \
+    mcDriverDaemon \
+    mnld \
+    mtkfusionrild \
+    netdagent \
+    nvram_daemon \
+    thermal_manager \
+    vpud \
+    wlan_assistant
 
 # Neural Networks
 PRODUCT_PACKAGES += \
@@ -172,7 +191,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant
 
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf
 
 # CAS
@@ -256,23 +275,3 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 
 # Vendor
 $(call inherit-product, vendor/oplus/karen/karen-vendor.mk)
-
-# MTK Platform Daemons
-PRODUCT_PACKAGES += \
-    ccci_mdinit \
-    ccci_rpcd \
-    conninfra_loader \
-    dmc_core \
-    fuelgauged \
-    fuelgauged_nvram \
-    gbe \
-    lbs_hidl_service \
-    mcDriverDaemon \
-    mnld \
-    mtkfusionrild \
-    netdagent \
-    nvram_daemon \
-    thermal_manager \
-    vpud \
-    wlan_assistant
-
