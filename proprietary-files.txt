@@ -1,0 +1,162 @@
+# Copyright (C) 2024 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+# ----------------------------------------------------------------
+# BOOT CRITICAL
+# ----------------------------------------------------------------
+
+# Boot control
+vendor/bin/hw/android.hardware.boot@1.2-service
+
+# Trustonic TEE / Keymaster / Gatekeeper
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
+vendor/bin/hw/vendor.trustonic.tee@1.1-service
+vendor/bin/hw/vendor.trustonic.soter@1.0-service
+vendor/bin/mcDriverDaemon
+vendor/lib64/libMcClient.so
+vendor/lib64/libMcRegistry.so
+vendor/lib64/libgdmcprov.so
+vendor/lib64/libMcGdmcSo.so
+vendor/lib64/libmtk_tlc_tee_km_4_1.so
+vendor/lib64/vendor.trustonic.tee@1.1.so
+vendor/lib/libMcClient.so
+vendor/lib/libMcRegistry.so
+
+# NVRAM — calibration data, needed very early in boot
+vendor/bin/nvram_daemon
+vendor/lib64/libnvram.so
+vendor/lib64/libnvramagent.so
+vendor/lib64/libfile_op.so
+
+# Health
+vendor/bin/hw/android.hardware.health@2.1-service
+
+# ----------------------------------------------------------------
+# DISPLAY — no screen without these
+# ----------------------------------------------------------------
+
+vendor/bin/hw/android.hardware.graphics.composer@2.3-service
+vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
+vendor/lib64/hw/gralloc.default.so
+vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+vendor/lib64/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+vendor/lib64/android.hardware.graphics.allocator@4.0.so
+vendor/lib64/libdrm.so
+vendor/lib64/libgrallocusage.so
+vendor/lib/hw/gralloc.default.so
+
+# GPU (Mali)
+vendor/lib64/egl/libGLES_mali.so
+vendor/lib64/hw/vulkan.mali.so
+vendor/lib64/hw/mt6893/vulkan.mali.so
+vendor/lib/egl/libGLES_mali.so
+vendor/lib/hw/vulkan.mali.so
+vendor/lib/hw/mt6893/vulkan.mali.so
+
+# ----------------------------------------------------------------
+# AUDIO
+# ----------------------------------------------------------------
+
+vendor/bin/hw/android.hardware.audio.service.mediatek
+vendor/lib64/hw/audio.primary.mt6893.so
+vendor/lib64/libaudiopreprocessing.so
+vendor/lib64/libaudioroute.so
+vendor/lib64/libaudiosetting.so
+vendor/lib64/libaudiofoundation.so
+vendor/lib64/libbluetooth_audio_session.so
+vendor/lib64/android.hardware.audio@7.0.so
+vendor/lib64/android.hardware.audio.common@7.0.so
+vendor/lib64/android.hardware.audio.effect@7.0.so
+vendor/lib/hw/audio.primary.mt6893.so
+vendor/lib/libaudiopreprocessing.so
+vendor/lib/libaudioroute.so
+
+# ----------------------------------------------------------------
+# BLUETOOTH
+# ----------------------------------------------------------------
+
+vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
+vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
+vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
+vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
+vendor/lib64/android.hardware.bluetooth@1.1.so
+vendor/lib64/android.hardware.bluetooth.audio@2.1.so
+
+# ----------------------------------------------------------------
+# CAMERA
+# ----------------------------------------------------------------
+
+vendor/bin/hw/camerahalserver
+vendor/lib64/hw/camera.mt6893.so
+vendor/lib64/libcam.halsensor.so
+vendor/lib64/libcam_utils.so
+vendor/lib64/libcamera_metadata.so
+
+# ----------------------------------------------------------------
+# CONNECTIVITY (WiFi + BT coexistence)
+# conninfra is a kernel module loaded by conninfra_loader
+# ----------------------------------------------------------------
+
+vendor/bin/conninfra_loader
+vendor/lib/modules/conninfra.ko
+vendor/firmware/conninfra.cfg
+vendor/etc/init/hw/init_conninfra.rc
+vendor/etc/init/init.conninfra.rc
+
+# ----------------------------------------------------------------
+# MODEM / RIL — essential for boot sequence
+# ----------------------------------------------------------------
+
+vendor/bin/hw/mtkfusionrild
+vendor/bin/ccci_mdinit
+vendor/bin/ccci_rpcd
+vendor/lib64/libccci_util.so
+vendor/lib64/mtk-ril.so
+vendor/lib64/libmtk_ril_utils.so
+
+# ----------------------------------------------------------------
+# POWER
+# ----------------------------------------------------------------
+
+vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.2.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
+
+# ----------------------------------------------------------------
+# SENSORS
+# ----------------------------------------------------------------
+
+vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
+vendor/lib64/hw/sensors.mt6893.so
+vendor/lib64/libsensorndkbridge.so
+
+# ----------------------------------------------------------------
+# THERMAL
+# ----------------------------------------------------------------
+
+vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
+vendor/lib64/libthermal.so
+
+# ----------------------------------------------------------------
+# VIBRATOR
+# ----------------------------------------------------------------
+
+vendor/lib64/hw/vibrator.default.so
+vendor/lib/hw/vibrator.default.so
+
+# ----------------------------------------------------------------
+# WIFI
+# ----------------------------------------------------------------
+
+vendor/bin/hw/android.hardware.wifi@1.0-service-lazy
+vendor/bin/hw/hostapd
+vendor/bin/hw/wpa_supplicant
+vendor/lib64/libwifi-hal.so
+vendor/lib64/libwpa_client.so
+vendor/etc/wifi/wpa_supplicant.conf
+vendor/etc/wifi/wpa_supplicant_overlay.conf
+vendor/etc/wifi/p2p_supplicant_overlay.conf
