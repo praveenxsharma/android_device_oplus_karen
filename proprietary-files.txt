@@ -55,9 +55,13 @@ vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
 vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib64/android.hardware.graphics.allocator@4.0.so
+vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+vendor/lib64/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+vendor/lib/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/libdrm.so
 vendor/lib/hw/gralloc.default.so
+vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
 
 # GPU (Mali)
 vendor/lib64/egl/libGLES_mali.so
@@ -100,7 +104,6 @@ vendor/lib64/android.hardware.bluetooth.audio@2.1.so
 # ----------------------------------------------------------------
 
 vendor/bin/hw/camerahalserver
-vendor/lib64/hw/camera.mt6893.so
 vendor/lib64/libcam.halsensor.so
 
 # ----------------------------------------------------------------
@@ -154,7 +157,6 @@ vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
 vendor/lib64/hw/thermal_hal.so
 vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
 vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
-vendor/lib64/libthermalalgo.so
 vendor/lib/hw/thermal_hal.so
 vendor/lib/hw/android.hardware.thermal@2.0-impl.so
 vendor/lib/hw/android.hardware.thermal@1.0-impl.so
