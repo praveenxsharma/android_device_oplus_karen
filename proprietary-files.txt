@@ -160,3 +160,18 @@ vendor/lib64/libwpa_client.so
 vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/etc/wifi/p2p_supplicant_overlay.conf
+
+# Connectivity init scripts
+vendor/etc/init/hw/factory_init.connectivity.common.rc
+vendor/etc/init/hw/factory_init.connectivity.rc
+vendor/etc/init/hw/init.connectivity.common.rc
+vendor/etc/init/hw/init.connectivity.rc
+vendor/etc/init/hw/init_conninfra.rc
+vendor/etc/init/hw/meta_init.connectivity.common.rc
+vendor/etc/init/hw/meta_init.connectivity.rc
+vendor/etc/init/init.connfem.rc
+vendor/etc/init/init.conninfra.rc
+
+# Neural Networks
+vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc
+vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron

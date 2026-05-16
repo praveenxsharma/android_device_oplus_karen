@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- karen display -->
+    <integer name="config_screenBrightnessSettingMinimum">2</integer>
+    <integer name="config_screenBrightnessSettingMaximum">255</integer>
+    <integer name="config_screenBrightnessSettingDefault">128</integer>
+
+    <!-- karen is not a tablet -->
+    <bool name="config_showNavigationBar">true</bool>
+
+    <!-- Disable rounded corner on status bar -->
+    <bool name="config_fillMainBuiltInDisplayCutout">false</bool>
+
+    <!-- karen display refresh rate -->
+    <integer name="config_defaultPeakRefreshRate">90</integer>
+    <integer name="config_defaultRefreshRate">60</integer>
+
+    <!-- DSDS — dual SIM slots -->
+    <integer name="config_num_physical_slots">2</integer>
+
+    <!-- WiFi -->
+    <bool name="config_wifi5ghzSupport">true</bool>
+    <bool name="config_wifiSoftapIeee80211acSupported">true</bool>
+
+    <!-- Disable edge long swipe for karen -->
+    <bool name="config_navBarCanMove">false</bool>
+</resources>

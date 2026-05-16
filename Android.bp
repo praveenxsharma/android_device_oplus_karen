@@ -2,3 +2,37 @@
 // SPDX-License-Identifier: Apache-2.0
 
 soong_namespace {}
+
+// libbase shim — bridges ABI difference for libnvram and libsysenv
+// These blobs were compiled against a slightly different libbase
+cc_library_shared {
+    name: "libbase_shim",
+    vendor: true,
+    srcs: ["shims/libbase_shim.cpp"],
+    shared_libs: ["libbase"],
+    compile_multilib: "64",
+}
+
+// libstagefright_foundation-v33 shim — for C2 media codec
+// The blob expects v33 symbols, AOSP ships different versioning
+cc_library_shared {
+    name: "libstagefright_foundation-v33",
+    vendor: true,
+    srcs: ["shims/libstagefright_foundation_shim.cpp"],
+    shared_libs: ["libstagefright_foundation"],
+    compile_multilib: "64",
+}
+
+// sensors convert-shared — bridges sensorndkbridge usage in mnld
+// and sensors subhal to the AOSP @1.0-convert approach
+cc_library_shared {
+    name: "android.hardware.sensors@1.0-convert-shared",
+    vendor: true,
+    srcs: ["shims/sensors_convert_shim.cpp"],
+    shared_libs: [
+        "android.hardware.sensors@1.0",
+        "libhidlbase",
+        "libutils",
+    ],
+    compile_multilib: "64",
+}
