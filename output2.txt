@@ -1,0 +1,242 @@
+Extracting 120 files in ./proprietary-files.txt from generate:
+  - vendor/bin/ccci_mdinit
+    !! vendor/bin/ccci_mdinit: file not found in source
+  - vendor/bin/ccci_rpcd
+    !! vendor/bin/ccci_rpcd: file not found in source
+  - vendor/bin/conninfra_loader
+    !! vendor/bin/conninfra_loader: file not found in source
+  - vendor/bin/hw/android.hardware.audio.service.mediatek
+    !! vendor/bin/hw/android.hardware.audio.service.mediatek: file not found in source
+  - vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
+    !! vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek: file not found in source
+  - vendor/bin/hw/android.hardware.boot@1.2-service
+    !! vendor/bin/hw/android.hardware.boot@1.2-service: file not found in source
+  - vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+    !! vendor/bin/hw/android.hardware.gatekeeper@1.0-service: file not found in source
+  - vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
+    !! vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek: file not found in source
+  - vendor/bin/hw/android.hardware.graphics.composer@2.3-service
+    !! vendor/bin/hw/android.hardware.graphics.composer@2.3-service: file not found in source
+  - vendor/bin/hw/android.hardware.health@2.1-service
+    !! vendor/bin/hw/android.hardware.health@2.1-service: file not found in source
+  - vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
+    !! vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic: file not found in source
+  - vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron
+    !! vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron: file not found in source
+  - vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
+    !! vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek: file not found in source
+  - vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
+    !! vendor/bin/hw/android.hardware.thermal@2.0-service.mtk: file not found in source
+  - vendor/bin/hw/android.hardware.wifi@1.0-service-lazy
+    !! vendor/bin/hw/android.hardware.wifi@1.0-service-lazy: file not found in source
+  - vendor/bin/hw/camerahalserver
+    !! vendor/bin/hw/camerahalserver: file not found in source
+  - vendor/bin/hw/hostapd
+    !! vendor/bin/hw/hostapd: file not found in source
+  - vendor/bin/hw/mtkfusionrild
+    !! vendor/bin/hw/mtkfusionrild: file not found in source
+  - vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
+    !! vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service: file not found in source
+  - vendor/bin/hw/vendor.trustonic.soter@1.0-service
+    !! vendor/bin/hw/vendor.trustonic.soter@1.0-service: file not found in source
+  - vendor/bin/hw/vendor.trustonic.tee@1.1-service
+    !! vendor/bin/hw/vendor.trustonic.tee@1.1-service: file not found in source
+  - vendor/bin/hw/wpa_supplicant
+    !! vendor/bin/hw/wpa_supplicant: file not found in source
+  - vendor/bin/mcDriverDaemon
+    !! vendor/bin/mcDriverDaemon: file not found in source
+  - vendor/bin/nvram_daemon
+    !! vendor/bin/nvram_daemon: file not found in source
+  - vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
+    !! vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc: file not found in source
+  - vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc
+    !! vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc: file not found in source
+  - vendor/etc/init/hw/factory_init.connectivity.common.rc
+    !! vendor/etc/init/hw/factory_init.connectivity.common.rc: file not found in source
+  - vendor/etc/init/hw/factory_init.connectivity.rc
+    !! vendor/etc/init/hw/factory_init.connectivity.rc: file not found in source
+  - vendor/etc/init/hw/init.connectivity.common.rc
+    !! vendor/etc/init/hw/init.connectivity.common.rc: file not found in source
+  - vendor/etc/init/hw/init.connectivity.rc
+    !! vendor/etc/init/hw/init.connectivity.rc: file not found in source
+  - vendor/etc/init/hw/init_conninfra.rc
+    !! vendor/etc/init/hw/init_conninfra.rc: file not found in source
+  - vendor/etc/init/hw/meta_init.connectivity.common.rc
+    !! vendor/etc/init/hw/meta_init.connectivity.common.rc: file not found in source
+  - vendor/etc/init/hw/meta_init.connectivity.rc
+    !! vendor/etc/init/hw/meta_init.connectivity.rc: file not found in source
+  - vendor/etc/init/init.connfem.rc
+    !! vendor/etc/init/init.connfem.rc: file not found in source
+  - vendor/etc/init/init.conninfra.rc
+    !! vendor/etc/init/init.conninfra.rc: file not found in source
+  - vendor/etc/wifi/p2p_supplicant_overlay.conf
+    !! vendor/etc/wifi/p2p_supplicant_overlay.conf: file not found in source
+  - vendor/etc/wifi/wpa_supplicant.conf
+    !! vendor/etc/wifi/wpa_supplicant.conf: file not found in source
+  - vendor/etc/wifi/wpa_supplicant_overlay.conf
+    !! vendor/etc/wifi/wpa_supplicant_overlay.conf: file not found in source
+  - vendor/firmware/conninfra.cfg
+    !! vendor/firmware/conninfra.cfg: file not found in source
+  - vendor/lib/egl/libGLES_mali.so
+    !! vendor/lib/egl/libGLES_mali.so: file not found in source
+  - vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+    !! vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so: file not found in source
+  - vendor/lib/hw/android.hardware.thermal@1.0-impl.so
+    !! vendor/lib/hw/android.hardware.thermal@1.0-impl.so: file not found in source
+  - vendor/lib/hw/android.hardware.thermal@2.0-impl.so
+    !! vendor/lib/hw/android.hardware.thermal@2.0-impl.so: file not found in source
+  - vendor/lib/hw/audio.primary.mt6893.so
+    !! vendor/lib/hw/audio.primary.mt6893.so: file not found in source
+  - vendor/lib/hw/gatekeeper.trustonic.so
+    !! vendor/lib/hw/gatekeeper.trustonic.so: file not found in source
+  - vendor/lib/hw/gralloc.default.so
+    !! vendor/lib/hw/gralloc.default.so: file not found in source
+  - vendor/lib/hw/kmsetkey.trustonic.so
+    !! vendor/lib/hw/kmsetkey.trustonic.so: file not found in source
+  - vendor/lib/hw/libMcGatekeeper.so
+    !! vendor/lib/hw/libMcGatekeeper.so: file not found in source
+  - vendor/lib/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+    !! vendor/lib/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so: file not found in source
+  - vendor/lib/hw/mt6893/vulkan.mali.so
+    !! vendor/lib/hw/mt6893/vulkan.mali.so: file not found in source
+  - vendor/lib/hw/thermal_hal.so
+    !! vendor/lib/hw/thermal_hal.so: file not found in source
+  - vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+    !! vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so: file not found in source
+  - vendor/lib/hw/vibrator.default.so
+    !! vendor/lib/hw/vibrator.default.so: file not found in source
+  - vendor/lib/hw/vulkan.mali.so
+    !! vendor/lib/hw/vulkan.mali.so: file not found in source
+  - vendor/lib/libMcClient.so
+    !! vendor/lib/libMcClient.so: file not found in source
+  - vendor/lib/libcustom_nvram.so
+    !! vendor/lib/libcustom_nvram.so: file not found in source
+  - vendor/lib/libmtkrillog.so
+    !! vendor/lib/libmtkrillog.so: file not found in source
+  - vendor/lib/libnvram.so
+    !! vendor/lib/libnvram.so: file not found in source
+  - vendor/lib/libnvram_sec.so
+    !! vendor/lib/libnvram_sec.so: file not found in source
+  - vendor/lib/libthermalalgo.so
+    !! vendor/lib/libthermalalgo.so: file not found in source
+  - vendor/lib/modules/conninfra.ko
+    !! vendor/lib/modules/conninfra.ko: file not found in source
+  - vendor/lib/soundfx/libaudiopreprocessing.so
+    !! vendor/lib/soundfx/libaudiopreprocessing.so: file not found in source
+  - vendor/lib/vendor.mediatek.hardware.nvram@1.0.so
+    !! vendor/lib/vendor.mediatek.hardware.nvram@1.0.so: file not found in source
+  - vendor/lib/vendor.mediatek.hardware.nvram@1.1.so
+    !! vendor/lib/vendor.mediatek.hardware.nvram@1.1.so: file not found in source
+  - vendor/lib64/android.hardware.audio.common@7.0.so
+    !! vendor/lib64/android.hardware.audio.common@7.0.so: file not found in source
+  - vendor/lib64/android.hardware.audio.effect@7.0.so
+    !! vendor/lib64/android.hardware.audio.effect@7.0.so: file not found in source
+  - vendor/lib64/android.hardware.audio@7.0.so
+    !! vendor/lib64/android.hardware.audio@7.0.so: file not found in source
+  - vendor/lib64/android.hardware.bluetooth.audio@2.1.so
+    !! vendor/lib64/android.hardware.bluetooth.audio@2.1.so: file not found in source
+  - vendor/lib64/android.hardware.bluetooth@1.1.so
+    !! vendor/lib64/android.hardware.bluetooth@1.1.so: file not found in source
+  - vendor/lib64/egl/libGLES_mali.so
+    !! vendor/lib64/egl/libGLES_mali.so: file not found in source
+  - vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
+    !! vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so: file not found in source
+  - vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so
+    !! vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so: file not found in source
+  - vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
+    !! vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so: file not found in source
+  - vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+    !! vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so: file not found in source
+  - vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+    !! vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so: file not found in source
+  - vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
+    !! vendor/lib64/hw/android.hardware.thermal@1.0-impl.so: file not found in source
+  - vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
+    !! vendor/lib64/hw/android.hardware.thermal@2.0-impl.so: file not found in source
+  - vendor/lib64/hw/audio.primary.mt6893.so
+    !! vendor/lib64/hw/audio.primary.mt6893.so: file not found in source
+  - vendor/lib64/hw/gatekeeper.trustonic.so
+    !! vendor/lib64/hw/gatekeeper.trustonic.so: file not found in source
+  - vendor/lib64/hw/gralloc.default.so
+    !! vendor/lib64/hw/gralloc.default.so: file not found in source
+  - vendor/lib64/hw/kmsetkey.trustonic.so
+    !! vendor/lib64/hw/kmsetkey.trustonic.so: file not found in source
+  - vendor/lib64/hw/libMcGatekeeper.so
+    !! vendor/lib64/hw/libMcGatekeeper.so: file not found in source
+  - vendor/lib64/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+    !! vendor/lib64/hw/mt6893/android.hardware.graphics.allocator@4.0-impl-mediatek.so: file not found in source
+  - vendor/lib64/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+    !! vendor/lib64/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so: file not found in source
+  - vendor/lib64/hw/mt6893/vulkan.mali.so
+    !! vendor/lib64/hw/mt6893/vulkan.mali.so: file not found in source
+  - vendor/lib64/hw/sensors.mt6893.so
+    !! vendor/lib64/hw/sensors.mt6893.so: file not found in source
+  - vendor/lib64/hw/thermal_hal.so
+    !! vendor/lib64/hw/thermal_hal.so: file not found in source
+  - vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
+    !! vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so: file not found in source
+  - vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
+    !! vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so: file not found in source
+  - vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+    !! vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so: file not found in source
+  - vendor/lib64/hw/vibrator.default.so
+    !! vendor/lib64/hw/vibrator.default.so: file not found in source
+  - vendor/lib64/hw/vulkan.mali.so
+    !! vendor/lib64/hw/vulkan.mali.so: file not found in source
+  - vendor/lib64/libMcClient.so
+    !! vendor/lib64/libMcClient.so: file not found in source
+  - vendor/lib64/libMcTeeSoter.so
+    !! vendor/lib64/libMcTeeSoter.so: file not found in source
+  - vendor/lib64/libaudiofoundation.so
+    !! vendor/lib64/libaudiofoundation.so: file not found in source
+  - vendor/lib64/libbluetooth_audio_session.so
+    !! vendor/lib64/libbluetooth_audio_session.so: file not found in source
+  - vendor/lib64/libcam.halsensor.so
+    !! vendor/lib64/libcam.halsensor.so: file not found in source
+  - vendor/lib64/libccci_util.so
+    !! vendor/lib64/libccci_util.so: file not found in source
+  - vendor/lib64/libcustom_nvram.so
+    !! vendor/lib64/libcustom_nvram.so: file not found in source
+  - vendor/lib64/libdrm.so
+    !! vendor/lib64/libdrm.so: file not found in source
+  - vendor/lib64/libfile_op.so
+    !! vendor/lib64/libfile_op.so: file not found in source
+  - vendor/lib64/libmtk-fusion-ril-prop-vsim.so
+    !! vendor/lib64/libmtk-fusion-ril-prop-vsim.so: file not found in source
+  - vendor/lib64/libmtk-ril.so
+    !! vendor/lib64/libmtk-ril.so: file not found in source
+  - vendor/lib64/libmtkmipc-ril.so
+    !! vendor/lib64/libmtkmipc-ril.so: file not found in source
+  - vendor/lib64/libmtkrillog.so
+    !! vendor/lib64/libmtkrillog.so: file not found in source
+  - vendor/lib64/libmtkrilutils.so
+    !! vendor/lib64/libmtkrilutils.so: file not found in source
+  - vendor/lib64/libnvram.so
+    !! vendor/lib64/libnvram.so: file not found in source
+  - vendor/lib64/libnvram_sec.so
+    !! vendor/lib64/libnvram_sec.so: file not found in source
+  - vendor/lib64/libsensorndkbridge.so
+    !! vendor/lib64/libsensorndkbridge.so: file not found in source
+  - vendor/lib64/libwifi-hal.so
+    !! vendor/lib64/libwifi-hal.so: file not found in source
+  - vendor/lib64/libwpa_client.so
+    !! vendor/lib64/libwpa_client.so: file not found in source
+  - vendor/lib64/soundfx/libaudiopreprocessing.so
+    !! vendor/lib64/soundfx/libaudiopreprocessing.so: file not found in source
+  - vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
+    !! vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so: file not found in source
+  - vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
+    !! vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so: file not found in source
+  - vendor/lib64/vendor.mediatek.hardware.mtkpower@1.2.so
+    !! vendor/lib64/vendor.mediatek.hardware.mtkpower@1.2.so: file not found in source
+  - vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
+    !! vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so: file not found in source
+  - vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
+    !! vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so: file not found in source
+  - vendor/lib64/vendor.trustonic.tee.tui@1.0.so
+    !! vendor/lib64/vendor.trustonic.tee.tui@1.0.so: file not found in source
+  - vendor/lib64/vendor.trustonic.tee@1.0.so
+    !! vendor/lib64/vendor.trustonic.tee@1.0.so: file not found in source
+  - vendor/lib64/vendor.trustonic.tee@1.1.so
+    !! vendor/lib64/vendor.trustonic.tee@1.1.so: file not found in source
+Makefiles generated.
