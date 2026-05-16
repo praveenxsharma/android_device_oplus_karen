@@ -31,3 +31,7 @@
 
 # Fingerprint
 /dev/goodix_fp                0660   system     system
+
+# MTK
+/dev/ttyMT1                   0660   system     system
+/dev/ttyMT2                   0660   system     system
