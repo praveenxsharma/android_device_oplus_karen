@@ -77,7 +77,6 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0-service-mediatek \
-    android.hardware.graphics.composer@2.3-service \
     android.hardware.memtrack@1.0-service
 
 # DRM
@@ -93,16 +92,11 @@ PRODUCT_PACKAGES += \
 
 # Gatekeeper / Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service \
     android.hardware.keymaster@4.1-service.trustonic \
     libkeymaster4support.vendor
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -186,7 +180,6 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-lazy \
     hostapd \
     wpa_supplicant
 
