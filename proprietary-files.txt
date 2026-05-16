@@ -15,19 +15,33 @@ vendor/bin/hw/vendor.trustonic.tee@1.1-service
 vendor/bin/hw/vendor.trustonic.soter@1.0-service
 vendor/bin/mcDriverDaemon
 vendor/lib64/libMcClient.so
-vendor/lib64/libMcRegistry.so
-vendor/lib64/libgdmcprov.so
-vendor/lib64/libMcGdmcSo.so
-vendor/lib64/libmtk_tlc_tee_km_4_1.so
+vendor/lib64/libMcTeeSoter.so
+vendor/lib64/hw/gatekeeper.trustonic.so
+vendor/lib64/hw/kmsetkey.trustonic.so
+vendor/lib64/hw/libMcGatekeeper.so
+vendor/lib64/vendor.trustonic.tee@1.0.so
 vendor/lib64/vendor.trustonic.tee@1.1.so
+vendor/lib64/vendor.trustonic.tee.tui@1.0.so
 vendor/lib/libMcClient.so
-vendor/lib/libMcRegistry.so
+vendor/lib/hw/gatekeeper.trustonic.so
+vendor/lib/hw/kmsetkey.trustonic.so
+vendor/lib/hw/libMcGatekeeper.so
 
 # NVRAM — calibration data, needed very early in boot
 vendor/bin/nvram_daemon
 vendor/lib64/libnvram.so
-vendor/lib64/libnvramagent.so
+vendor/lib64/libnvram_sec.so
+vendor/lib64/libcustom_nvram.so
 vendor/lib64/libfile_op.so
+vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
+vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
+vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+vendor/lib/libnvram.so
+vendor/lib/libnvram_sec.so
+vendor/lib/libcustom_nvram.so
+vendor/lib/vendor.mediatek.hardware.nvram@1.0.so
+vendor/lib/vendor.mediatek.hardware.nvram@1.1.so
+vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 
 # Health
 vendor/bin/hw/android.hardware.health@2.1-service
@@ -43,7 +57,6 @@ vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6893/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/android.hardware.graphics.allocator@4.0.so
 vendor/lib64/libdrm.so
-vendor/lib64/libgrallocusage.so
 vendor/lib/hw/gralloc.default.so
 
 # GPU (Mali)
@@ -60,17 +73,14 @@ vendor/lib/hw/mt6893/vulkan.mali.so
 
 vendor/bin/hw/android.hardware.audio.service.mediatek
 vendor/lib64/hw/audio.primary.mt6893.so
-vendor/lib64/libaudiopreprocessing.so
-vendor/lib64/libaudioroute.so
-vendor/lib64/libaudiosetting.so
+vendor/lib64/soundfx/libaudiopreprocessing.so
 vendor/lib64/libaudiofoundation.so
 vendor/lib64/libbluetooth_audio_session.so
 vendor/lib64/android.hardware.audio@7.0.so
 vendor/lib64/android.hardware.audio.common@7.0.so
 vendor/lib64/android.hardware.audio.effect@7.0.so
 vendor/lib/hw/audio.primary.mt6893.so
-vendor/lib/libaudiopreprocessing.so
-vendor/lib/libaudioroute.so
+vendor/lib/soundfx/libaudiopreprocessing.so
 
 # ----------------------------------------------------------------
 # BLUETOOTH
@@ -92,8 +102,6 @@ vendor/lib64/android.hardware.bluetooth.audio@2.1.so
 vendor/bin/hw/camerahalserver
 vendor/lib64/hw/camera.mt6893.so
 vendor/lib64/libcam.halsensor.so
-vendor/lib64/libcam_utils.so
-vendor/lib64/libcamera_metadata.so
 
 # ----------------------------------------------------------------
 # CONNECTIVITY (WiFi + BT coexistence)
@@ -114,8 +122,12 @@ vendor/bin/hw/mtkfusionrild
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
 vendor/lib64/libccci_util.so
-vendor/lib64/mtk-ril.so
-vendor/lib64/libmtk_ril_utils.so
+vendor/lib64/libmtk-ril.so
+vendor/lib64/libmtkrilutils.so
+vendor/lib64/libmtkrillog.so
+vendor/lib64/libmtk-fusion-ril-prop-vsim.so
+vendor/lib64/libmtkmipc-ril.so
+vendor/lib/libmtkrillog.so
 
 # ----------------------------------------------------------------
 # POWER
@@ -139,7 +151,14 @@ vendor/lib64/libsensorndkbridge.so
 # ----------------------------------------------------------------
 
 vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
-vendor/lib64/libthermal.so
+vendor/lib64/hw/thermal_hal.so
+vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
+vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
+vendor/lib64/libthermalalgo.so
+vendor/lib/hw/thermal_hal.so
+vendor/lib/hw/android.hardware.thermal@2.0-impl.so
+vendor/lib/hw/android.hardware.thermal@1.0-impl.so
+vendor/lib/libthermalalgo.so
 
 # ----------------------------------------------------------------
 # VIBRATOR
