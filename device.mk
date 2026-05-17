@@ -52,8 +52,6 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
-    libaudiofoundation.vendor \
-    libbluetooth_audio_session \
     libalsautils \
     libnbaio_mono \
     libtinycompress \
