@@ -2,7 +2,7 @@
     Stock manifest from OxygenOS A13 Indian build (CPH2401_11_A.01)
     Verified from karen firmware dump
 -->
-<manifest version="4.0" type="device" target-level="5">
+<manifest version="4.0" type="device" target-level="7">
     <!-- AOSP HALs -->
     <hal format="hidl">
         <name>android.hardware.audio</name>
@@ -490,9 +490,5 @@
         </interface>
         <fqname>@1.0::ITui/default</fqname>
     </hal>
-
-    <sepolicy>
-        <version>31.0</version>
-    </sepolicy>
-    <kernel target-level="5"/>
+    <kernel target-level="7"/>
 </manifest>
