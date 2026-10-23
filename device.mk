@@ -55,16 +55,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# Gatekeeper / Keymaster
-PRODUCT_PACKAGES += \
-    libkeymaster4support.vendor
+# keymaster4 support ships as a vendor blob
 
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
+    libhwbinder
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -74,8 +70,7 @@ PRODUCT_COPY_FILES += \
 # Blob fixup shims
 PRODUCT_PACKAGES += \
     libbase_shim \
-    libstagefright_foundation_shim \
-    android.hardware.sensors@1.0-convert-shared
+    libstagefright_foundation_shim
 
 # AOSP-built vendor libs that vendor blobs link against (the impl blobs
 # are prebuilts, so their soong dependencies are not pulled in implicitly)

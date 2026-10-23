@@ -57,17 +57,12 @@ blob_fixups: blob_fixups_user_type = {
 
     # NVRAM + sysenv: linked against incompatible libbase ABI
     (
+        'vendor/lib/libnvram.so',
+        'vendor/lib/libsysenv.so',
         'vendor/lib64/libnvram.so',
         'vendor/lib64/libsysenv.so',
     ): blob_fixup()
         .add_needed('libbase_shim.so'),
-
-    # mnld: use convert-shared instead of sensorndkbridge
-    'vendor/bin/mnld': blob_fixup()
-        .replace_needed(
-            'libsensorndkbridge.so',
-            'android.hardware.sensors@1.0-convert-shared.so',
-        ),
 }  # fmt: skip
 
 
