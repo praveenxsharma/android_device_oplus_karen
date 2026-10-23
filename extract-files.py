@@ -56,11 +56,8 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .add_needed('libbase_shim.so'),
 
-    # mnld + sensors subhal: use convert-shared instead of sensorndkbridge
-    (
-        'vendor/bin/mnld',
-        'vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so',
-    ): blob_fixup()
+    # mnld: use convert-shared instead of sensorndkbridge
+    'vendor/bin/mnld': blob_fixup()
         .replace_needed(
             'libsensorndkbridge.so',
             'android.hardware.sensors@1.0-convert-shared.so',

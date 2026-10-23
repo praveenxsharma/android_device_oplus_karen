@@ -3,21 +3,9 @@
 #
 # All blobs from OxygenOS A13 CPH2401_11_A.01, unless pinned
 
--vendor/app/GoogleNetworkStackResOverlay/GoogleNetworkStackResOverlay.apk
--vendor/app/GoogleTetheringResOverlay/GoogleTetheringResOverlay.apk
--vendor/app/InProcessTetheringResOverlay/InProcessTetheringResOverlay.apk
--vendor/app/NetworkStackInProcessResOverlay/NetworkStackInProcessResOverlay.apk
--vendor/app/NetworkStackResOverlay/NetworkStackResOverlay.apk
--vendor/app/TetheringResOverlay/TetheringResOverlay.apk
--vendor/overlay/CellbroadcastUIResOverlay/CellbroadcastUIResOverlay.apk
--vendor/overlay/FrameworkResOverlayExt/FrameworkResOverlayExt.apk
--vendor/overlay/FrameworkResOverlay/FrameworkResOverlay.apk
--vendor/overlay/MtkSettingsResOverlay/MtkSettingsResOverlay.apk
--vendor/overlay/SettingsProviderResOverlay/SettingsProviderResOverlay.apk
--vendor/overlay/SystemUIResOverlay/SystemUIResOverlay.apk
--vendor/overlay/WifiResMainlineOverlay/WifiResMainlineOverlay.apk
--vendor/overlay/WifiResOverlay/WifiResOverlay.apk
--vendor/priv-app/GpuGameDriver.mt6893/GpuGameDriver.mt6893.apk
+# Deliberately NOT shipped from stock vendor:
+# - Google/NetworkStack/Tethering RRO apks (mainline modules own these on AOSP)
+# - GpuGameDriver.mt6893.apk (updatable GPU game driver, not needed for bringup)
 
 vendor/app/mcRegistry/020f0000000000000000000000000000.drbin
 vendor/app/mcRegistry/020f0000000000000000000000000000.tlbin
@@ -1059,7 +1047,6 @@ vendor/lib64/android.frameworks.sensorservice@1.0.so
 vendor/lib64/android.hardware.audio@6.0.so
 vendor/lib64/android.hardware.audio@7.0.so
 vendor/lib64/android.hardware.audio@7.0-util.so
-vendor/lib64/android.hardware.audio.common@5.0.so
 vendor/lib64/android.hardware.audio.common@6.0.so
 vendor/lib64/android.hardware.audio.common@6.0-util.so
 vendor/lib64/android.hardware.audio.common@7.0-enums.so
@@ -1332,7 +1319,6 @@ vendor/lib64/libarmnn.so
 vendor/lib64/libasn1c_core.so
 vendor/lib64/libasn1c_mapi.so
 vendor/lib64/libasn1c_mdmi.so
-vendor/lib64/libaudioclient_aidl_conversion.so
 vendor/lib64/libaudiocompensationfilterc.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
 vendor/lib64/libaudiocomponentenginec.so
@@ -1341,14 +1327,12 @@ vendor/lib64/libaudiocustparam_vendor.so
 vendor/lib64/libaudiodcrflt_vendor.so
 vendor/lib64/libaudio_engineer_test.so
 vendor/lib64/libaudiofmtconv.so
-vendor/lib64/libaudiofoundation.so
 vendor/lib64/libaudioloudc.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudioprimarydevicehalifclient.so
 vendor/lib64/libaudiotoolkit_vendor.so
 vendor/lib64/libaurisysdemo.so
 vendor/lib64/libAVCSecureVencCA.so
-vendor/lib64/libavservices_minijail_vendor.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libbinderdebug.so
 vendor/lib64/libblisrc32_vendor.so
@@ -1391,7 +1375,6 @@ vendor/lib64/libcamdrv_imem.so
 vendor/lib64/libcamdrv_isp.so
 vendor/lib64/libcamdrv_tuning_mgr.so
 vendor/lib64/libcamdrv_twin.so
-vendor/lib64/libcamera2ndk_vendor.so
 vendor/lib64/libcamera_core_hwi.so
 vendor/lib64/libcameracustom.camera.sensors.so
 vendor/lib64/libcameracustom.eis.so
@@ -1476,7 +1459,6 @@ vendor/lib64/libfeature.stereo.provider.so
 vendor/lib64/libfeature.vsdof.hal.so
 vendor/lib64/libfft_vendor.so
 vendor/lib64/libfile_op.so
-vendor/lib64/libflatbuffers-cpp.so
 vendor/lib64/libforkexecwrap.so
 vendor/lib64/libformatter.so
 vendor/lib64/libFrameRecord.so
@@ -1879,7 +1861,6 @@ vendor/lib/android.frameworks.sensorservice@1.0.so
 vendor/lib/android.hardware.audio@6.0.so
 vendor/lib/android.hardware.audio@7.0.so
 vendor/lib/android.hardware.audio@7.0-util.so
-vendor/lib/android.hardware.audio.common@5.0.so
 vendor/lib/android.hardware.audio.common@6.0.so
 vendor/lib/android.hardware.audio.common@6.0-util.so
 vendor/lib/android.hardware.audio.common@7.0-enums.so
@@ -2071,7 +2052,6 @@ vendor/lib/libarmnn.so
 vendor/lib/libasn1c_core.so
 vendor/lib/libasn1c_mapi.so
 vendor/lib/libasn1c_mdmi.so
-vendor/lib/libaudioclient_aidl_conversion.so
 vendor/lib/libaudiocompensationfilterc.so
 vendor/lib/libaudiocompensationfilter_vendor.so
 vendor/lib/libaudiocomponentenginec.so
@@ -2080,15 +2060,12 @@ vendor/lib/libaudiocustparam_vendor.so
 vendor/lib/libaudiodcrflt_vendor.so
 vendor/lib/libaudio_engineer_test.so
 vendor/lib/libaudiofmtconv.so
-vendor/lib/libaudiofoundation.so
 vendor/lib/libaudioloudc.so
 vendor/lib/libaudio_param_parser-vnd.so
 vendor/lib/libaudioprimarydevicehalifclient.so
 vendor/lib/libaudiotoolkit_vendor.so
 vendor/lib/libaurisysdemo.so
 vendor/lib/libAVCSecureVencCA.so
-vendor/lib/libavservices_minijail.so
-vendor/lib/libavservices_minijail_vendor.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libblisrc32_vendor.so
 vendor/lib/libbluetooth_audio_session_mediatek.so
@@ -2129,7 +2106,6 @@ vendor/lib/libcamdrv_imem.so
 vendor/lib/libcamdrv_isp.so
 vendor/lib/libcamdrv_tuning_mgr.so
 vendor/lib/libcamdrv_twin.so
-vendor/lib/libcamera2ndk_vendor.so
 vendor/lib/libcamera_core_hwi.so
 vendor/lib/libcameracustom.camera.sensors.so
 vendor/lib/libcameracustom.eis.so
@@ -2206,7 +2182,6 @@ vendor/lib/libfeature.stereo.provider.so
 vendor/lib/libfeature.vsdof.hal.so
 vendor/lib/libfgauge_gm30.so
 vendor/lib/libfile_op.so
-vendor/lib/libflatbuffers-cpp.so
 vendor/lib/libformatter.so
 vendor/lib/libFrameRecord.so
 vendor/lib/libgamehdr.so
