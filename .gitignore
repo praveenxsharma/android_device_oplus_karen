@@ -5,3 +5,6 @@ upload.sh
 
 # agent instructions (kept in workspace notes, not in git)
 AGENTS.md
+
+# python cache from extract-utils runs
+__pycache__/

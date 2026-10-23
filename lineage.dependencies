@@ -1,0 +1,32 @@
+[
+  {
+    "repository": "praveenxsharma/android_kernel_oplus_karen",
+    "target_path": "kernel/oplus/karen",
+    "branch": "glm"
+  },
+  {
+    "repository": "praveenxsharma/android_vendor_oplus_karen",
+    "target_path": "vendor/oplus/karen",
+    "branch": "glm"
+  },
+  {
+    "repository": "LineageOS/android_hardware_mediatek",
+    "target_path": "hardware/mediatek",
+    "branch": "lineage-20"
+  },
+  {
+    "repository": "LineageOS/android_hardware_oplus",
+    "target_path": "hardware/oplus",
+    "branch": "lineage-20"
+  },
+  {
+    "repository": "LineageOS/android_device_mediatek_sepolicy_vndr",
+    "target_path": "device/mediatek/sepolicy_vndr",
+    "branch": "lineage-20"
+  },
+  {
+    "repository": "snove520/clang-r498229b",
+    "target_path": "prebuilts/clang/host/linux-x86/clang-r498229b",
+    "branch": "main"
+  }
+]
