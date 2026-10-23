@@ -71,6 +71,19 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(DEVICE_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
+# Blob fixup shims
+PRODUCT_PACKAGES += \
+    libbase_shim \
+    libstagefright_foundation_shim \
+    android.hardware.sensors@1.0-convert-shared
+
+# AOSP-built vendor libs that vendor blobs link against (the impl blobs
+# are prebuilts, so their soong dependencies are not pulled in implicitly)
+PRODUCT_PACKAGES += \
+    libaudiofoundation.vendor \
+    libavservices_minijail.vendor \
+    libflatbuffers-cpp.vendor
+
 # WiFi
 PRODUCT_PACKAGES += \
     hostapd \
