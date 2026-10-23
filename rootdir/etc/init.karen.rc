@@ -24,8 +24,5 @@ on property:sys.boot_completed=1
     # Re-enable EAS after boot
     write /proc/sys/kernel/sched_energy_aware 1
 
-    # Display color mode
-    write /sys/class/drm/card0-DSI-1/disp_param 1
-
     # Touchpanel tap-to-wake default state
     write /proc/touchpanel/double_tap_enable 1

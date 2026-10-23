@@ -317,7 +317,6 @@ vendor/etc/fs_config_dirs
 vendor/etc/fs_config_files
 vendor/etc/fstab.emmc
 vendor/etc/fstab.enableswap
-vendor/etc/fstab.mt6893
 vendor/etc/fstb.cfg
 vendor/etc/FV-SAM-MTK2.dat
 vendor/etc/gbe.cfg
@@ -823,7 +822,6 @@ vendor/etc/.tp/.ht120.mtc
 vendor/etc/.tp/thermal.conf
 vendor/etc/.tp/thermal.off.conf
 vendor/etc/.tp/.thermal_policy_08
-vendor/etc/ueventd.rc
 vendor/etc/usb_audio_accessory_only_policy_configuration.xml
 vendor/etc/usb_audio_policy_configuration.xml
 vendor/etc/vendor-apns-conf.xml
@@ -953,7 +951,6 @@ vendor/etc/voicecommand/training/ubmfile/keyword07/hhha/supplement/9
 vendor/etc/voicecommand/training/ubmfile/keyword07/hhha/supplement/b
 vendor/etc/voicecommand/training/ubmfile/keyword07/keyphrase.xml
 vendor/etc/wfd_source_capability.csv
-vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/xgf.cfg
 vendor/firmware/BT_FW.cfg
 vendor/firmware/conninfra.cfg
