@@ -1,1 +1,7 @@
 upload.sh
+
+# opencode session transcripts
+.opencode/session-*.md
+
+# agent instructions (kept in workspace notes, not in git)
+AGENTS.md
