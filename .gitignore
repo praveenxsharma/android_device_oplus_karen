@@ -8,3 +8,7 @@ AGENTS.md
 
 # python cache from extract-utils runs
 __pycache__/
+
+# build/extraction logs
+build.log
+output*.txt
