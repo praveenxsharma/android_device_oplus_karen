@@ -81,3 +81,42 @@ Kernel (glm branch of android_kernel_oplus_karen):
   with `extract-files.py <dump>`), and push the kernel glm branch so lineage.dependencies
   resolves.
 - `__pycache__/`, `build.log`, `output*.txt` are untracked/ignored; keep them out.
+
+## Kernel build status (standalone compile check)
+
+The stock karen defconfig needed three fixes to compile against the denniz-evolved 4.19
+tree (all committed on kernel glm, replicated at `D:\work\android_kernel_oplus_karen` and
+bundled to `D:\work\kernel-karen-glm.bundle`):
+1. Disable OPLUS_SECURE_GUARD/rootguard family (tree lacks include/linux/selinux.h).
+2. CONFIG_WLAN_DRV_BUILD_IN=y (module-mode leaves conninfra symbols unresolved at link).
+3. oplus21127 panel `-Wstrict-prototypes` fix for clang 17.
+
+Build recipe that reached the final vmlinux link stage (toolchain: clang r498229b):
+```
+PATH=~/karen/hostdeps/root/usr/bin:~/karen/toolchains/clang-r498229b/bin:$PATH \
+BISON_PKGDATADIR=~/karen/hostdeps/root/usr/share/bison \
+LD_LIBRARY_PATH=~/karen/hostdeps/root/usr/lib/x86_64-linux-gnu \
+make -j8 O=out ARCH=arm64 LLVM=1 LLVM_IAS=1 CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm \
+  STRIP=llvm-strip OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf \
+  HOSTCC=gcc HOSTCXX=g++ CROSS_COMPILE=aarch64-linux-gnu- CLANG_TRIPLE=aarch64-linux-gnu
+```
+All objects compiled; the last run died only because WSL crashed mid-build (see below).
+Re-run the same command to finish the final link and produce `out/arch/arm64/boot/Image`.
+
+## 2026-10-24 incident: WSL outage (IMPORTANT)
+
+Ubuntu WSL's ext4.vhdx lives on `E:\WSL\ubuntu` and E: hit 100% full (25 MB free) while
+the kernel clone/toolchain/out grew inside it → ext4 I/O errors → WSL service wedged
+("Catastrophic failure", distros won't start). Recovery requires an ADMIN PowerShell:
+
+1. `Restart-Service LxssManager` (or reboot the machine), then
+2. Free E: space or relocate the Ubuntu vhd to D: (34 GB free) BEFORE starting the
+   distro again:
+   `wsl --export Ubuntu D:\wsl-ubuntu.tar` (needs E: headroom first!), or move other
+   E: data. Do NOT run `--set-sparse --allow-unsafe` on the possibly-dirty vhd.
+3. The in-vhd kernel clone (`~/karen/android_kernel_oplus_karen`, glm branch with the
+   same 3 commits) and toolchain are expected intact once the distro boots; the D:\work
+   copy is the authoritative backup either way.
+4. The device tree repo on E: was left with a wiped index by the crash; it was recovered
+   (glm rewritten to a clean 58-file tree + progress doc commit). If anything looks odd,
+   `git reset --hard 459afd0` on glm restores the final state.
