@@ -44,25 +44,12 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 # Audio
-PRODUCT_PACKAGES += \
-    android.hardware.audio@7.0-impl \
-    android.hardware.audio.effect@7.0-impl \
-    android.hardware.soundtrigger@2.3-impl \
-    audio.bluetooth.default \
-    audio.r_submix.default \
-    audio.usb.default \
-    libalsautils \
-    libnbaio_mono \
-    libtinycompress \
-    libdynproc \
-    libhapticgenerator
-
+# All audio HAL modules (impls, effects, soundtrigger, r_submix, usb,
+# bluetooth offload and support libs) ship as stock vendor blobs via
+# proprietary-files.txt — building them from source here would collide
+# with the blobs at the same install paths.
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
-
-# DRM
-PRODUCT_PACKAGES += \
-    libdrmclearkeyplugin
 
 # Fastbootd
 PRODUCT_PACKAGES += \
