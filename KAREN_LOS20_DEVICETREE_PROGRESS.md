@@ -57,9 +57,13 @@ Device tree (each item = one or more commits on glm):
 2. boot/dtbo partition sizes fixed from dump images (67108864 / 716800).
 3. Virtual A/B corrected: `launch.mk` (no vendor_ramdisk), `PRODUCT_VIRTUAL_AB_OTA := true`,
    VNDK v31 libutils copies dropped (zero -vNN deps in vendor ELF scan).
-4. Preloader pinned: `prebuilt/preloader.img` (byte-identical to dump) + releasetools.py
-   ships it in OTAs for rescue; never auto-flashed (denniz's raw sda/sdb writes are their
-   A-only approach and deliberately NOT copied). Attribution: op6893@8b7634e.
+4. Preloader pinned twice over (dump-verified blob, hash-enforced):
+   - `proprietary-firmware.txt` lists `preloader_raw.img|b46b57c5...` — the extract-utils
+     SHA-1 pin (Aerodactyl-style, registered via `module.add_firmware_proprietary_file()`)
+     makes extraction FAIL on any firmware mismatch and installs it as a radio image in
+     the vendor tree.
+   - releasetools.py also drops the byte-identical `prebuilt/preloader.img` into every
+     OTA zip root for rescue. karen OTAs never flash it (not in AB_OTA_PARTITIONS).
 5. VINTF manifest metadata matched stock (46 HALs already matched; target-level/sepolicy fixed).
 6. proprietary-files.txt: `-` exclusion lines removed (crashed python extract-utils), blobs
    AOSP builds dropped (libaudiofoundation etc. — restored audio.common@5.0 which BT blobs
