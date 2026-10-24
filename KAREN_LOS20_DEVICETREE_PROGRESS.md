@@ -84,12 +84,24 @@ Kernel (glm branch of android_kernel_oplus_karen):
 
 ## Kernel build status (standalone compile check)
 
-The stock karen defconfig needed three fixes to compile against the denniz-evolved 4.19
-tree (all committed on kernel glm, replicated at `D:\work\android_kernel_oplus_karen` and
-bundled to `D:\work\kernel-karen-glm.bundle`):
+**BUILD VERIFIED WORKING — 2026-10-24: `Image` (41.3 MB, uncompressed, matching stock
+format) + `Image.gz` build clean with `MODPOST 0 modules`.**
+
+The stock karen defconfig needed four fixes to compile against the denniz-evolved 4.19
+tree (all committed on kernel glm, tip `d53638a3`):
 1. Disable OPLUS_SECURE_GUARD/rootguard family (tree lacks include/linux/selinux.h).
 2. CONFIG_WLAN_DRV_BUILD_IN=y (module-mode leaves conninfra symbols unresolved at link).
 3. oplus21127 panel `-Wstrict-prototypes` fix for clang 17.
+4. Module-free config: LCD_CLASS_DEVICE + tcp congestion algos built in; MT6357/6359
+   ASoC accdet codecs, IKHEADERS and MMSTAT_TRACER disabled. karen is MT6359P (dump DT:
+   68 mt6359 refs, zero mt6357) and headset detection is already provided by the
+   built-in drivers/misc/mediatek/accdet/mt6359 driver — enabling the sound/soc codec
+   copy caused duplicate-symbol link errors. The device tree ships no kernel modules,
+   so the Image is fully self-contained.
+
+One-command build (validated): `wsl -d Ubuntu -- bash ~/karen/build-karen-kernel.sh`
+Backups: `D:\work\android_kernel_oplus_karen` (glm synced to d53638a3) and
+`D:\work\kernel-karen-glm.bundle`.
 
 Build recipe that reached the final vmlinux link stage (toolchain: clang r498229b):
 ```
