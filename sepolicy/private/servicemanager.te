@@ -1,1 +1,1 @@
-binder_call(alert-slider_daemon, servicemanager)
+binder_call(alert_slider_daemon, servicemanager)

@@ -19,7 +19,7 @@ cc_library_shared {
     name: "libstagefright_foundation_shim",
     srcs: ["libstagefright_foundation_shim.cpp"],
     shared_libs: ["libstagefright_foundation"],
-    stem: "libstagefright_foundation-v33.so",
+    stem: "libstagefright_foundation-v33",
     vendor: true,
     compile_multilib: "both",
     strip: {
