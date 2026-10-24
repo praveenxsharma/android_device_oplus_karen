@@ -115,6 +115,30 @@ make -j8 O=out ARCH=arm64 LLVM=1 LLVM_IAS=1 CC=clang LD=ld.lld AR=llvm-ar NM=llv
 All objects compiled; the last run died only because WSL crashed mid-build (see below).
 Re-run the same command to finish the final link and produce `out/arch/arm64/boot/Image`.
 
+## 2026-10-24: karen TWRP cross-validation + fixes
+
+The oneplus-karen-roms TWRP tree (android-12.1, releases 3.7.0_12-0/12-1, Oct 2022 —
+it booted) was used to cross-validate and yielded three real fixes, all committed:
+1. **Super partition sizes are device-measured (lpdump): 12348030976 / main
+   12345933824** — our denniz-inherited values (10200547328) were wrong for karen
+   hardware; wrong sizes break the dynamic-partition metadata OTAs write.
+2. **prebuilt/kernel must be the gzip blob, not the decompressed Image** (magiskboot
+   unpack decompresses; stock boot.img carries ~16.7 MB gzip). LOS BoardConfig now
+   uses BOARD_KERNEL_IMAGE_NAME := Image.gz (our build produces it; uncompressed
+   Image + ramdisk overflows the 64 MiB boot partition).
+3. Their fstab is entry-identical to the OOS13 stock fstab — independent confirmation.
+   Their device.mk also documents the real stock OTA partition set (my_* partitions
+   plus preloader_raw/lk are flashed by STOCK otas — custom ROMs correctly exclude
+   the bootloader chain).
+
+TWRP A13 update: `E:\trees\android_device_oplus_karen-twrp`, branch `android-13`
+(commit 2b66d1f amended to f822cac): prebuilts swapped byte-identical to the OOS13
+dump (kernel gzip 16.7 MB / dtb 210471 / dtbo 716800), product IDs corrected to
+CPH2401, CHANGELOG entry added, original authors (Beanow, SakilMondal, Sathamspot,
+TheMalachite) credited via Co-authored-by. Build with the twrp-13 base; the fstab
+needed no changes. Their Trustonic TEE/keymaster recovery stack (decryption) is
+untouched and should keep working — HAL versions match the A13 vendor manifest.
+
 ## 2026-10-24 incident: WSL outage (IMPORTANT)
 
 Ubuntu WSL's ext4.vhdx lives on `E:\WSL\ubuntu` and E: hit 100% full (25 MB free) while
