@@ -35,8 +35,8 @@ Useful for the HAL/sepolicy bring-up phase:
   bootloader chain) — the device now runs A13-era bootloader firmware, which is exactly
   what our A13 dump prebuilts are paired with, and one more reason our ROM must never
   touch the preloader.
-- Variant note: this unit is CPH2401 (EU); CPH2399 is the Indian karen variant (same
-  hardware, project 21881) — the OTA assert intentionally allows both.
+- Variant note: this unit is CPH2401 (India); CPH2399 is the EU/Global karen variant (same
+  hardware family; odm carries both 21881 and 21882 conf variants) — the OTA assert intentionally allows both.
 
 - Virtual A/B **with compression**, recovery-as-boot, boot header **v2**, no vendor_boot,
   no cache/recovery partitions. Stock kernel is an **uncompressed Image**, 4.19.191+, clang 11.
@@ -139,6 +139,17 @@ make -j8 O=out ARCH=arm64 LLVM=1 LLVM_IAS=1 CC=clang LD=ld.lld AR=llvm-ar NM=llv
 ```
 All objects compiled; the last run died only because WSL crashed mid-build (see below).
 Re-run the same command to finish the final link and produce `out/arch/arm64/boot/Image`.
+
+## 2026-10-24: karen lineage-19.1 tree harvest + odm completion
+
+oneplus-karen-roms/android_device_oneplus_karen (lineage-19.1, denniz-derived,
+never confirmed booting) was harvested: alert slider daemon, fingerprint
+2.3 wrapper + oplus 2.1 HAL, touch gesture HAL, ImsInit, IMS/WiFi RROs,
+dalvik heap inherit, and the denniz sepolicy set (union-merged, A12-era -
+iterate from first-boot denials). The odm blob set (512 entries) completed
+the missing oplus HAL half: fingerprint + fingerprintpay + NXP NFC services
+with all per-project confs (vendor fallbacks point at karen's 21882 set).
+Variant mapping confirmed: CPH2401 = India, CPH2399 = EU/Global.
 
 ## 2026-10-24: karen TWRP cross-validation + fixes
 
