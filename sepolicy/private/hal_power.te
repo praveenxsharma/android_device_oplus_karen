@@ -1,2 +1,2 @@
-r_dir_file(hal_power, proc_tp)
-allow hal_power proc_tp:file write;
+r_dir_file(hal_power, proc_touchpanel)
+allow hal_power proc_touchpanel:file write;

@@ -1,0 +1,6 @@
+# Fingerprint: the odm oplus fingerprint HAL registers the oplus 2.1 interface
+# alongside the AOSP 2.3 one declared in manifest_oplus_fingerprint.xml.
+# Stock karen vendor_hwservice_contexts maps the oplus interface onto the
+# AOSP hal_fingerprint_hwservice type, which hal_fingerprint_default (the
+# domain this binary runs as) may add via hal_attribute_hwservice().
+vendor.oplus.hardware.biometrics.fingerprint::IBiometricsFingerprint  u:object_r:hal_fingerprint_hwservice:s0

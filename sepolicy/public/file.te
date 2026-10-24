@@ -1,0 +1,2 @@
+# sysfs block device nodes (used by genfs_contexts and the boot control HAL)
+type sysfs_block_device, fs_type, sysfs_type;

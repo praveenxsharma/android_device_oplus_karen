@@ -1,9 +1,3 @@
-type vtservice, coredomain;
-type vtservice_exec, exec_type, file_type, system_file_type;
-
-init_daemon_domain(vtservice);
-binder_use(vtservice)
-binder_call(vtservice, mediaserver)
-
+# The vtservice / vtservice_exec / vtservice_service types and the domain rules
+# are owned by device/mediatek/sepolicy_vndr (bsp/plat_private/vtservice.te).
 allow vtservice radio_service:service_manager find;
-allow vtservice vtservice_service:service_manager add;

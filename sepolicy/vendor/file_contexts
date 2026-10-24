@@ -1,0 +1,8 @@
+# Lights HAL shipped through the vendor overlay
+# (AOSP: "For additional vendor file contexts for vendor overlay files,
+#  use device specific file_contexts")
+/(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.lights-service\.mediatek  u:object_r:hal_light_default_exec:s0
+
+# Fingerprint: odm ships the oplus fingerprint HAL service
+# (label mirrors denniz op6893 sepolicy/vendor/file_contexts)
+/(odm|vendor/odm)/bin/hw/vendor\.oplus\.hardware\.biometrics\.fingerprint@2\.1-service  u:object_r:hal_fingerprint_default_exec:s0

@@ -4,19 +4,12 @@ genfscon proc /mtk_lpm                u:object_r:proc_mtk_lpm:s0
 genfscon proc /touchpanel             u:object_r:proc_touchpanel:s0
 genfscon sysfs /bus/platform/devices/bootdevice  u:object_r:sysfs_block_device:s0
 
-# MTK gpufreq / tristatekey
-genfscon proc  /gpufreq     u:object_r:proc_gpufreq:s0
+# MTK tristatekey
 genfscon proc /tristatekey  u:object_r:proc_tristatekey:s0
 
-# Vibration
-genfscon sysfs /sys/class/leds/vibrator/vmax         u:object_r:sysfs_vibrator:s0
+# Vibration (sysfs paths are relative to the mount point)
+genfscon sysfs /class/leds/vibrator/vmax         u:object_r:sysfs_vibrator:s0
 
-# Battery
-genfscon sysfs /devices/platform/battery                     u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/battery/ADC_Charger_Voltage u:object_r:sysfs_vbus:s0
-
-# Charger
-genfscon sysfs /devices/platform/charger/ADC_Charger_Voltage u:object_r:sysfs_vbus:s0
-genfscon sysfs /devices/platform/mt_charger/power_supply     u:object_r:sysfs_batteryinfo:s0
-# NOTE: source's "genfscon proc /touchpanel u:object_r:proc_tp:s0" was NOT merged;
-# this tree already labels /touchpanel as proc_touchpanel (sepolicy/public/proc_touchpanel.te).
+# NOTE: battery / charger / vbus / cpufreq / gpufreq / ppm / ged labels are
+# owned by device/mediatek/sepolicy_vndr (basic/non_plat, basic/plat_private
+# and bsp genfs_contexts); the source tree's duplicate labels were not merged.

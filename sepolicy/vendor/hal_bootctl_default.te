@@ -6,6 +6,6 @@ init_daemon_domain(hal_bootctl_mtk)
 hal_server_domain(hal_bootctl_mtk, hal_bootctl)
 
 allow hal_bootctl_mtk block_device:dir search;
-allow hal_bootctl_mtk bootdevice_file:dir search;
+allow hal_bootctl_mtk bootdevice_block_device:dir search;
 allow hal_bootctl_mtk sysfs_block_device:dir search;
 allow hal_bootctl_mtk sysfs_block_device:file rw_file_perms;

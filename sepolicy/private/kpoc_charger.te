@@ -1,6 +1,7 @@
-type kpoc_charger_exec, system_file_type, exec_type, file_type;
-typeattribute kpoc_charger coredomain;
-
+# NOTE: the kpoc_charger / kpoc_charger_exec types, the coredomain attribute,
+# init_daemon_domain() and most of the rules below are already provided by
+# device/mediatek/sepolicy_vndr (basic/plat_public/kpoc_charger.te and
+# bsp/plat_private/kpoc_charger.te). Only the extra rules are kept here.
 hal_client_domain(kpoc_charger, hal_light)
 hal_client_domain(kpoc_charger, hal_health)
 
