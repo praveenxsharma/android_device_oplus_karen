@@ -73,6 +73,7 @@ module = ExtractUtilsModule(
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
 )
+module.add_firmware_proprietary_file()
 
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)

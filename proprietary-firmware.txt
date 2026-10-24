@@ -1,0 +1,9 @@
+# Copyright (C) 2024 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+# Pinned to the verified OxygenOS 13 (TP1A.220905.001) preloader from the
+# CPH2401 dump. The SHA-1 pin makes extraction fail loudly if anyone builds
+# against different firmware, so only this known-good blob can ever ship.
+# karen OTAs never flash the preloader (virtual A/B; the bootloader chain is
+# not in AB_OTA_PARTITIONS) - it rides along for rescue purposes only.
+preloader_raw.img|b46b57c5226e5564048444bcd855a55ff5e602af
