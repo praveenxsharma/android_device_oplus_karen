@@ -17,6 +17,27 @@ platform but A-only with a recovery partition — karen is virtual A/B, recovery
 
 ## Verified device facts (from the dump)
 
+### Hardware inventory (DeviceInfo HW report from this CPH2401 unit, OOS12 era)
+
+Useful for the HAL/sepolicy bring-up phase:
+
+- SoC MT6893 (Dimensity 1300), board k6893v1_64, device OP557AL1, 8 GB LPDDR4X, UFS.
+- Cameras: IMX766 + IMX615 + IMX355 + GC02M1b — all `*_raw21881` (live confirmation of
+  project 21881 = karen).
+- Touch: FocalTech FTS (i2c 0-0038). Fingerprint: anc_mtk (spi1.0). NFC: NXP pn544
+  (i2c 9-0028). SmartPA: aw882xx.
+- Sensors: Bosch BMI2XY (accel+gyro), MEMSIC mmc5603 (mag), AMS tcs3701 (ALS/PS).
+- Charging: mp2650 + rt5125 + bq27541 gauge; mt6360 PMIC companion (main PMIC remains
+  MT6359P per the dump DT). USB-C switch: fsa4480. Panel: 1080x2400 @ 60/90 Hz.
+- Features declare face + fingerprint biometrics (camera-based face unlock).
+- The report is from OOS 12 (A12, kernel 4.14.186, Oct 2022): the OOS 13 OTA upgraded
+  the kernel to 4.19.191 and also flashed preloader_raw/lk (stock OTAs write the whole
+  bootloader chain) — the device now runs A13-era bootloader firmware, which is exactly
+  what our A13 dump prebuilts are paired with, and one more reason our ROM must never
+  touch the preloader.
+- Variant note: this unit is CPH2401 (EU); CPH2399 is the Indian karen variant (same
+  hardware, project 21881) — the OTA assert intentionally allows both.
+
 - Virtual A/B **with compression**, recovery-as-boot, boot header **v2**, no vendor_boot,
   no cache/recovery partitions. Stock kernel is an **uncompressed Image**, 4.19.191+, clang 11.
 - Partition sizes (exact image dumps): boot 67108864, dtbo 716800, super 10200547328,
