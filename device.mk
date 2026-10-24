@@ -43,6 +43,9 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Audio
 # All audio HAL modules (impls, effects, soundtrigger, r_submix, usb,
 # bluetooth offload and support libs) ship as stock vendor blobs via
@@ -57,6 +60,20 @@ PRODUCT_PACKAGES += \
 
 # keymaster4 support ships as a vendor blob
 
+# Alert slider
+PRODUCT_PACKAGES += \
+    alert-slider_daemon
+
+# Fingerprint HAL built from source; the vendor.oplus.hardware.biometrics.fingerprint@2.1
+# HIDL interface is generated from interfaces/ (hidl_package_root vendor.oplus.hardware)
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.3-service.karen \
+    vendor.oplus.hardware.biometrics.fingerprint@2.1
+
+# Touch (Lineage touchscreen gesture service)
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.karen
+
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
@@ -66,6 +83,23 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(DEVICE_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(DEVICE_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+
+# ImsInit hack
+PRODUCT_PACKAGES += \
+    ImsInit
+
+# MTK IMS overlays (RROs)
+PRODUCT_PACKAGES += \
+    mtk-ims \
+    mtk-ims-telephony
+
+# NFC
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    com.gsma.services.nfc \
+    NfcNci \
+    SecureElement \
+    Tag
 
 # Blob fixup shims
 PRODUCT_PACKAGES += \
@@ -82,7 +116,8 @@ PRODUCT_PACKAGES += \
 # WiFi
 PRODUCT_PACKAGES += \
     hostapd \
-    wpa_supplicant
+    wpa_supplicant \
+    WifiOverlay
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
@@ -136,6 +171,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+
+# Input — headset buttons on the MTK accdet
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/keylayout/mt63xx-accdet_Headset.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mt63xx-accdet_Headset.kl
 
 # Properties
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true

@@ -14,6 +14,10 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Boot animation resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
+# Screen resolution
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
+
 # Device identifier — THIS must match TARGET_OTA_ASSERT_DEVICE in BoardConfig
 PRODUCT_NAME := lineage_karen
 PRODUCT_DEVICE := karen
