@@ -192,3 +192,29 @@ the kernel clone/toolchain/out grew inside it → ext4 I/O errors → WSL servic
 4. The device tree repo on E: was left with a wiped index by the crash; it was recovered
    (glm rewritten to a clean 58-file tree + progress doc commit). If anything looks odd,
    `git reset --hard 459afd0` on glm restores the final state.
+
+## 2026-10-24: Final multi-reviewer gate + fixes
+
+Three independent reviewers (boot-safety / build-integrity / dump-fidelity) audited glm.
+No brick vectors found (OTA blast radius userland-only, releasetools writes nothing,
+AVB/fstab/partition geometry clean). Fixes applied from their findings:
+
+- DTB offset corrected to 0x07c08000 (stock boot header, was a first-flash boot risk).
+- All 19 stock vendor VINTF fragments + odm olc/nfc/vibrator fragments shipped (binaries
+  were shipped unmanifested - bootctl/gnss/power/lights/wifi/usb/NFC would not register).
+- wifi@1.0-service-lazy rc added (binary shipped without its rc - no wifi).
+- Vibrator HAL set (oplus lmvibrator + vibrator-default + libs) added.
+- Fingerprint: source 2.3 wrapper dropped; the odm stack owns it (its fragment declares
+  2.3 via override served by the oplus 2.1 service).
+- Sepolicy aligned to the LOS20 AOSP+sepolicy_vndr base (ownership table verified);
+  odm fingerprint hwservice context added per the dump vendor_hwservice_contexts.
+- odm tuning shipped (camera/audio params, firmware, nfc confs - 3387 odm files) since
+  our build replaces the stock odm image. SenseTime license artifacts removed (policy).
+- camera/microphone feature permissions added.
+
+Known remaining (post-first-boot work): SELinux enforcing with IGNORE_NEVERALLOWS -
+collect denials and write policy; vendor.prop backfill (~143 props incl. chrdev names,
+harmless while drivers are built-in); IMS needs the mtk-ims stack verified; face unlock,
+oplus misc/touch/oplus_project HALs not shipped; odm model/singleblur license files kept
+(re-examine for official LOS submission); userdata partition size still unverified from
+hardware (fastboot getvar).
